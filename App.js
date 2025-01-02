@@ -1,24 +1,17 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, SafeAreaView, Image } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView, Image, TouchableOpacity, Button, Alert } from 'react-native';
 
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
-      <Text>
-        Hello React Native
-      </Text>
-      <Image
-        fadeDuration={1000}
-        blurRadius={10}
-        source={{ 
-        width: 200,
-        height: 300,
-        uri: 'https://picsum.photos/id/237/200/300'}} />
-      <StatusBar style="auto" />
+      <Button title='Click Me' onPress={() => 
+        Alert.prompt("My Title", "My Message", text => console.log(text) )}
+      />
     </SafeAreaView>
   );
 }
+
 
 const styles = StyleSheet.create({
   container: {
